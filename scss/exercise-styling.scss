@@ -1,0 +1,166 @@
+// Sergio Pacheco - Monigle Coding Exercise
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+
+// Basic SCSS Style Variables
+$primary-font: 'Helvetica', sans-serif;
+$secondary-font: 'Karla';
+$label-font: 'Sarabun', sans-serif;
+$body-color: #0c171f;
+$primary-color: #007FD9;
+$secondary-color: #4da8da;
+$darkened-color: #161718;
+$primary-text: #007FD9;
+$secondary-text: #4da8da;
+$white-text: #fff;
+$off-white: #F5F5EE;
+
+body
+{
+    font-family: $secondary-font;
+    background: $body-color;
+    font-size: 1.2rem;
+    color: $white-text;
+    width: 100%;
+
+    img, button, .anchor{ caret-color: transparent; }
+}
+
+a
+{
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover{ color: $secondary-color; }
+}
+
+#pageContent
+{
+    position: relative;
+}
+
+.page-header
+{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+#sortButtons
+{
+    padding: 1.5% 5% 0 5%;
+    text-align: center;
+
+    button
+    {  
+        background-color: $primary-color;
+        padding: 1rem 1.5rem;
+        border-color: transparent;
+        //border-radius: 1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $white-text;
+        font-size: 1.25rem;
+        min-width: 15rem;
+        margin: 1rem 0.5rem;
+
+        &:hover
+        {
+            background: $secondary-color;
+        }
+    }
+
+    .dropdown-menu
+    {
+        width: 15rem;
+        background: $primary-color;
+        border-radius: 0;
+        border-color: transparent;
+        padding: 0;
+        max-height: 15rem;
+        overflow-y: auto;
+        border: .1rem solid $white-text;
+
+        button
+        {
+            font-size: .75rem;
+            text-align: center;
+            margin: 0;
+            min-width: 100%;
+        }
+    } 
+}
+
+#breweryList
+{
+   #breweryTable
+   {
+        min-width: 100%;
+        text-align: center;
+        th, td{ border: .1rem solid $white-text; padding: 1rem; }
+        th{ background: $primary-color; text-transform: uppercase; }
+        td{ font-size: .85rem; }
+   }
+}
+
+#scrollToTopBtn
+{
+    display: none;
+    position: fixed;
+    bottom: .5rem;
+    right: .1rem;
+    z-index: 100;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $white-text;
+    cursor: pointer;
+    i
+    {
+        font-size: 2rem;
+        color: $white-text;
+        background-color: $primary-color;
+        padding: .45rem .6rem;
+        border-radius: 100%;
+        border: 0.1rem solid $white-text;
+        top: 0;
+        position: relative;
+        -webkit-transition: top 0.3s ease-out;
+        -moz-transition: top 0.3s ease-out;
+        -ms-transition: top 0.3s ease-out;
+        -o-transition: top 0.3s ease-out;
+        transition: top 0.3s ease-out;
+    }
+}
+
+@media (min-width: 768px)
+{
+    #scrollToTopBtn
+    {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+@media (min-width: 992px)
+{
+    #breweryList
+    {
+        padding: 0 5% 5% 5%;
+    }
+
+    #scrollToTopBtn
+    {
+        i
+        {          
+            &:hover
+            {
+                box-shadow: 1px 1px 10px $white-text;
+                top: -.35rem;
+            }
+        }
+    }
+}
